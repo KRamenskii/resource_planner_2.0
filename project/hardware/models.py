@@ -379,7 +379,7 @@ class Component(models.Model):
         blank=True,
         null=True
     )
-    
+
     class Meta:
         ordering = ('manufacturer', 'name')
         verbose_name = _('Компонент / запчасть')
