@@ -373,6 +373,12 @@ class Component(models.Model):
         blank=True,
         null=True
     )
+    article_nom = models.CharField(
+        verbose_name=_('Артикул изделия'),
+        max_length=100,
+        blank=True,
+        null=True
+    )
 
     class Meta:
         ordering = ('manufacturer', 'name')
