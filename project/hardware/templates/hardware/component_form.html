@@ -176,6 +176,23 @@
                                 </div>
                             </div>
 
+                            <!-- Функция -->
+                            <div class="form-group row my-1" aria-required="true">
+                                <label for="{{ form.appointment.id_for_label }}"
+                                    class="col-md-4 col-form-label text-md-right">
+                                    {{ form.appointment.label }}
+                                    <span class="required">*</span>
+                                </label>
+                                <div class="col-md-5">
+                                    {{ form.appointment|addclass:"form-control form-control-sm" }}
+                                    {% if form.appointment.help_text %}
+                                    <small id="{{ form.appointment.id_for_label }}-help" class="form-text text-muted">
+                                        {{ form.appointment.help_text|safe }}
+                                    </small>
+                                    {% endif %}
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 

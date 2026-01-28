@@ -387,6 +387,12 @@ class Component(models.Model):
         blank=True,
         null=True
     )
+    appointment = models.CharField(
+        verbose_name=_('Функция'),
+        max_length=500,
+        blank=True,
+        null=True
+    )
 
     class Meta:
         ordering = ('manufacturer', 'name')
