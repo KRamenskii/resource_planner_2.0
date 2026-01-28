@@ -159,6 +159,23 @@
                                 </div>
                             </div>
 
+                            <!-- Метод восстановления -->
+                            <div class="form-group row my-1" aria-required="true">
+                                <label for="{{ form.recovery_method.id_for_label }}"
+                                    class="col-md-4 col-form-label text-md-right">
+                                    {{ form.recovery_method.label }}
+                                    <span class="required">*</span>
+                                </label>
+                                <div class="col-md-5">
+                                    {{ form.recovery_method|addclass:"form-control form-control-sm" }}
+                                    {% if form.recovery_method.help_text %}
+                                    <small id="{{ form.recovery_method.id_for_label }}-help" class="form-text text-muted">
+                                        {{ form.recovery_method.help_text|safe }}
+                                    </small>
+                                    {% endif %}
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 

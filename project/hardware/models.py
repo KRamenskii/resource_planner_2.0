@@ -379,6 +379,14 @@ class Component(models.Model):
         blank=True,
         null=True
     )
+    recovery_method = models.ForeignKey(
+        to='hardware.RecoveryMethod',
+        verbose_name=_('Метод восстановления'),
+        on_delete=models.SET_NULL,
+        related_name='parts',
+        blank=True,
+        null=True
+    )
 
     class Meta:
         ordering = ('manufacturer', 'name')
