@@ -175,6 +175,18 @@ class Cabinet(models.Model):
         verbose_name=_('Оперативное наименование'),
         max_length=30
     )
+    name_ptc = models.CharField(
+        verbose_name=_('Наименование ПТК'),
+        max_length=200,
+        blank=True,
+        null=True
+    )
+    location = models.CharField(
+        verbose_name=_('Местоположение'),
+        max_length=200,
+        blank=True,
+        null=True
+    )
     hardware = models.ForeignKey(
         to='hardware.Hardware',
         verbose_name=_('Оборудование'),
