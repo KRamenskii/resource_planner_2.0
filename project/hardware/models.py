@@ -450,3 +450,26 @@ class Manufacturer(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class RecoveryMethod(models.Model):
+    name = models.CharField(
+        verbose_name=_('Метод восстановления'),
+        max_length=200,
+        unique=True
+    )
+    abbreviation = models.CharField(
+        verbose_name=_('Аббревиатура'),
+        max_length=10,
+        unique=True,
+        blank=True,
+        null=True
+    )
+
+    class Meta:
+        ordering = ('abbreviation', )
+        verbose_name = _('Метод восстановления')
+        verbose_name_plural = _('Методы восстановления')
+
+    def __str__(self):
+        return self.name

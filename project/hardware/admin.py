@@ -9,7 +9,7 @@ from django.utils.translation import gettext_lazy as _
 
 from .models import (Cabinet, Component, ComponentDesign,
                      ComponentFunction, Connection, Facility,
-                     Group, Hardware, Manufacturer, Part)
+                     Group, Hardware, Manufacturer, Part, RecoveryMethod)
 from defects.models import Defect
 
 
@@ -256,6 +256,11 @@ class ComponentDesignAdmin(MixinAdmin):
 
 @admin.register(ComponentFunction)
 class ComponentFunctiondmin(MixinAdmin):
+    pass
+
+
+@admin.register(RecoveryMethod)
+class RecoveryMethodAdmin(MixinAdmin):
     pass
 
 
