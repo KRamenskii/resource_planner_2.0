@@ -11,6 +11,8 @@
             <small>{{ cabinet.hardware.name }}</small>
         </a>
         <div class="mt-3">
+            <p class="mb-1"><span class="text-muted">Наименование ПТК:</span> {{ cabinet.name_ptc|default:"" }}</p>
+            <p class="mb-1"><span class="text-muted">Местоположение:</span> {{ cabinet.location|default:"" }}</p>
             <p class="mb-1"><span class="text-muted">Производитель:</span> {{ cabinet.manufacturer|default:"" }}</p>
             <p class="mb-1"><span class="text-muted">Серия изделия:</span> {{ cabinet.series|default:"" }}</p>
             <p class="mb-1"><span class="text-muted">Тип изделия:</span> {{ cabinet.type|default:"" }}</p>

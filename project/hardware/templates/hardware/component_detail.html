@@ -21,7 +21,10 @@
               <p class="mb-1"><span class="text-muted">Производитель:</span> {{ component.manufacturer|default:"" }}</p>
               <p class="mb-1"><span class="text-muted">Серия:</span> {{ component.series|default:"" }}</p>
               <p class="mb-1"><span class="text-muted">Тип:</span> {{ component.type|default:"" }}</p>
+              <p class="mb-1"><span class="text-muted">Артикул:</span> {{ component.article_nom|default:"" }}</p>
               <p class="mb-1"><span class="text-muted">Назначение:</span> {{ component.function }}</p>
+              <p class="mb-1"><span class="text-muted">Метод восстановления:</span> {{ component.recovery_method|default:"" }}</p>
+              <p class="mb-1"><span class="text-muted">Функция:</span> {{ component.appointment|default:"" }}</p>
               <p class="mb-1"><span class="text-muted">Исполнение:</span> {{ component.design }}</p>
               <p class="mb-1"><span class="text-muted">В оборудовании:</span> {% if component.in_hardware %}{{ component.in_hardware }}{% else %}0{% endif %} шт.</p>
               <p class="mb-1"><span class="text-muted">На хранении:</span> {% if component.in_storage %}{{ component.in_storage }}{% else %}0{% endif %} шт.</p>

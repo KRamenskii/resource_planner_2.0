@@ -175,6 +175,18 @@ class Cabinet(models.Model):
         verbose_name=_('Оперативное наименование'),
         max_length=30
     )
+    name_ptc = models.CharField(
+        verbose_name=_('Наименование ПТК'),
+        max_length=200,
+        blank=True,
+        null=True
+    )
+    location = models.CharField(
+        verbose_name=_('Местоположение'),
+        max_length=200,
+        blank=True,
+        null=True
+    )
     hardware = models.ForeignKey(
         to='hardware.Hardware',
         verbose_name=_('Оборудование'),
@@ -379,6 +391,20 @@ class Component(models.Model):
         blank=True,
         null=True
     )
+    recovery_method = models.ForeignKey(
+        to='hardware.RecoveryMethod',
+        verbose_name=_('Метод восстановления'),
+        on_delete=models.SET_NULL,
+        related_name='parts',
+        blank=True,
+        null=True
+    )
+    appointment = models.CharField(
+        verbose_name=_('Функция'),
+        max_length=500,
+        blank=True,
+        null=True
+    )
 
     class Meta:
         ordering = ('manufacturer', 'name')
@@ -447,6 +473,29 @@ class Manufacturer(models.Model):
         ordering = ('name', )
         verbose_name = _('Изготовитель оборудования')
         verbose_name_plural = _('Изготовители оборудования')
+
+    def __str__(self):
+        return self.name
+
+
+class RecoveryMethod(models.Model):
+    name = models.CharField(
+        verbose_name=_('Метод восстановления'),
+        max_length=200,
+        unique=True
+    )
+    abbreviation = models.CharField(
+        verbose_name=_('Аббревиатура'),
+        max_length=10,
+        unique=True,
+        blank=True,
+        null=True
+    )
+
+    class Meta:
+        ordering = ('abbreviation', )
+        verbose_name = _('Метод восстановления')
+        verbose_name_plural = _('Методы восстановления')
 
     def __str__(self):
         return self.name
